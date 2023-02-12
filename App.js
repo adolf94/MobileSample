@@ -1,3 +1,4 @@
+import "./shim.js"
 import { AppBar, Button, Flex,  IconButton, TextInput, ListItem } from '@react-native-material/core';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';

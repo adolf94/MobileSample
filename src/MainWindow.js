@@ -21,6 +21,7 @@ const MainWindow = ()=>{
                 isDirectory: (await FileSystem.getInfoAsync(e)).isDirectory,
                 fileName: getFileName(e),
                 isEncrypt: false,
+                
                 fileEncrypted: await encryptString(getFileName(e),'1234')
               }
             }))
@@ -60,7 +61,10 @@ const MainWindow = ()=>{
         secondaryText={file.fileEncrypted}
         leading={<Icon name="inbox" size={24} />}
         trailing={props =><Icon name="chevron-right" {...props} />}
-        onPress={ async ()=> console.log( await decryptString(file.fileEncrypted))}
+        onPress={ async ()=>{
+          console.log( await decryptString(file.fileEncrypted))
+          console.log( fileEncrypted)
+        }}
 
       /> 
     )}
